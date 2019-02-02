@@ -6,7 +6,7 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-// SOLUTION 1 (my solution)
+// SOLUTION 1
 // function reverse(str) {
 //     let reversedString = "";
 
