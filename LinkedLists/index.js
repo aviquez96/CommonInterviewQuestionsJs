@@ -21,7 +21,7 @@ class LinkedList {
         this.head = newNode;
     }
 
-    size () {
+    size() {
         let listSize = 0;
         let traversingNode = this.head; 
 
@@ -56,12 +56,45 @@ class LinkedList {
         this.head = null;
     }
 
-    removeFirst () {
+    removeFirst() {
         if (this.head) {
             let node = this.head;
             this.head = node.next; 
         }
         return
+    }
+
+    removeLast() {
+        //If there is no head
+        if (this.head == null) {
+            return
+        }
+
+        //If the link has only 1 node (head)
+        if (this.head.next == null) {
+            this.head = null
+            return
+        }
+
+        let previousNode = this.head
+        let currentNode = previousNode.next;
+
+        while (currentNode.next != null) {
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+        }
+
+        previousNode.next = null;
+    }
+
+    insertLast (data) {
+        let lastNode = this.getLast();
+
+        if (lastNode == null) {
+            this.head = new Node(data);
+        } else {
+            lastNode.next = new Node(data);
+        }
     }
 }
 
