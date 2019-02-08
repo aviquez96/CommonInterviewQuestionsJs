@@ -51,6 +51,18 @@ class LinkedList {
             traversingNode = traversingNode.next;
         }
     }
+
+    clear() {
+        this.head = null;
+    }
+
+    removeFirst () {
+        if (this.head) {
+            let node = this.head;
+            this.head = node.next; 
+        }
+        return
+    }
 }
 
 module.exports = { Node, LinkedList };
