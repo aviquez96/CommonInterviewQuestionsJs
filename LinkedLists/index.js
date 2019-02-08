@@ -110,6 +110,23 @@ class LinkedList {
         }
         return null;
     }
-}
+
+    removeAt (index) {
+        if (this.head == null) {
+            return
+        }
+
+        if (index === 0) {
+            this.head = this.head.next;
+        }
+
+        let previous = this.getAt(index-1);
+        if (previous == null || previous.next == null) {
+            return;
+        }
+        previous.next = previous.next.next;
+        
+    }
+} 
 
 module.exports = { Node, LinkedList };
