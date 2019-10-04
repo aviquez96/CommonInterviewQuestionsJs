@@ -32,6 +32,16 @@ class Tree {
         this.root = null;
     }
 
+    traverseBF(fn) {
+        let tempArray = [this.root];
+
+        while(tempArray.length) {
+            let firstElement = tempArray.shift();
+            tempArray.push(...firstElement.children);
+            fn(firstElement);
+        }
+    }
+
 }
 
 module.exports = { Tree, Node };
